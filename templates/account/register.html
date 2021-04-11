@@ -1,0 +1,112 @@
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Atuentication</title>
+    <!-- Font Awesome -->
+    <!-- Custom -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %} ">
+    <!-- Lightbox -->
+
+</head>
+<body>
+<div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+		<div class="login-form">
+        <form action="Account/signup" method='POST'>
+            {% csrf_token %}
+			<div class="sign-in-htm">
+				<div class="group">
+					<label for="user" class="label">Username</label>
+					<input id="user" type="text" class="input">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<input id="check" type="checkbox" class="check" checked>
+					<label for="check"><span class="icon"></span> Keep me Signed in</label>
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="Sign In">
+				</div>
+				<div class="hr"></div>
+				<div class="foot-lnk">
+					<a href="#forgot">Forgot Password?</a>
+				</div>
+			</div>
+            </form>
+            <form action="Account/signup" method='POST'>
+                {% csrf_token %}
+                <div class="sign-up-htm">
+                    <div class="group">
+                        <label for="user" class="label">First_Name</label>
+                        <input id="user"  name="first_name" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="user" class="label">Last_Name</label>
+                        <input id="user"  name="last_name" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label for="user" class="label">Email Address</label>
+                        <input id="user" name="email" type="text" class="input">
+                    </div>
+                    <div class="group">
+                        <label class="custom-control custom-radio custom-control-inline">
+                            <input class="custom-control-input" checked="" type="radio" name="gender" value="option1">
+                            <span class="custom-control-label"> Male </span>
+                        </label>
+                        <label class="custom-control custom-radio custom-control-inline">
+                            <input class="custom-control-input" type="radio" name="gender" value="option2">
+                            <span class="custom-control-label"> Female </span>
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <div class="group">
+                            <label>City</label>
+                            <input id="user" name="city" type="text" class="input">
+                        </div> <!-- form-group end.// -->
+                        <div class="group">
+                            <label>Country</label>
+                            <select class="input" name="country">
+                                <option> Choose...</option>
+                                <option>Uzbekistan</option>
+                                <option>Russia</option>
+                                <option selected="">United States</option>
+                                <option>India</option>
+                                <option>Afganistan</option>
+                            </select>
+                        </div> <!-- form-group end.// -->
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Password</label>
+                        <input id="pass" type="password" name="password" class="input" data-type="password">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">UserType</label>
+                        <input id="pass" type="password" name="type" class="input" data-type="password">
+                    </div>
+                    <div class="group">
+                        <label for="pass" class="label">Contact No</label>
+                        <input id="pass" name="phone" type="number" class="input">
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button" value="Sign Up">
+                    </div>
+                    <div class="hr"></div>
+                    <div class="foot-lnk">
+                        <label for="tab-1">Already Member?</a>
+                    </div>
+                </div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+{% endblock %}
